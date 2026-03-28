@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Static design tokens — hex values, use plain @theme */
+@theme {
+  --color-background: #F5F0EA;
+  --color-surface: #FFF8F1;
+  --color-primary: #C65A11;
+  --color-secondary: #E8A15B;
+  --color-accent: #D4A339;
+  --color-text: #1F1F1F;
+  --color-muted: #6E6A67;
+  --color-border: #D8B8A0;
 }
 
+/* Runtime font variables — must use @theme inline for next/font CSS vars */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-heading: var(--font-pacifico);
+  --font-body: var(--font-poppins);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-poppins), sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
