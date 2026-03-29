@@ -54,7 +54,7 @@ export const villages: Village[] = [
       kepalaDesa: {
         nama: "Drs. Abdul Rohman",
         jabatan: "Kepala Desa Kertayasa",
-        image: "https://picsum.photos/seed/kadeskertayasa/300/400",
+        image: "/desa/kertayasa/Kades.png",
       },
       kepalaDusun: [
         { nama: "Bpk. Sujarwo", jabatan: "Kepala Dusun Karangpaci", image: "https://picsum.photos/seed/kadus1/200/200" },

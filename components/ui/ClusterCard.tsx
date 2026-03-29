@@ -10,7 +10,7 @@ export default function ClusterCard({ cluster }: ClusterCardProps) {
   return (
     <Link
       href={`/tim?kluster=${cluster.id}`}
-      className="group relative rounded-2xl overflow-hidden aspect-[3/4] block"
+      className="group relative rounded-2xl overflow-hidden aspect-square block"
     >
       <Image
         src={cluster.image}

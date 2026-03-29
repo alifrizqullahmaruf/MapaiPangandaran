@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Beranda", href: "/" },
   { label: "Desa Kertayasa", href: "/desa/kertayasa" },
   { label: "Desa Batukaras", href: "/desa/batukaras" },
+  { label: "Proker", href: "/proker" },
   { label: "Tim", href: "/tim" },
 ]
 

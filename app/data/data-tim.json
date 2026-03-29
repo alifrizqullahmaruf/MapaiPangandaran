@@ -1,4 +1,14 @@
 [
+    {
+      "Nama": "Alif Rizqullah Maruf",
+      "Kluster": "SAINTEK",
+      "Fakultas": "Sekolah Vokasi",
+      "Prodi": "Teknologi Rekayasa Perangkat Lunak",
+      "Divisi": "Logistik",
+      "Jabatan": "KORMANIT",
+      "Instagram": "@alifrizm",
+      "Image": "/picture/Alif Rizqullah.png"
+    },
   {
     "Nama": "Achmad Ichwan Hidayat",
     "Kluster": "SOSHUM",
@@ -8,16 +18,6 @@
     "Jabatan": "KORMASIT BK 1",
     "Instagram": "@ichwan0612",
     "Image": "/picture/Achmad Ichwan.png"
-  },
-  {
-    "Nama": "Alif Rizqullah Maruf",
-    "Kluster": "SAINTEK",
-    "Fakultas": "Sekolah Vokasi",
-    "Prodi": "Teknologi Rekayasa Perangkat Lunak",
-    "Divisi": "Logistik",
-    "Jabatan": "KORMANIT",
-    "Instagram": "@alifrizm",
-    "Image": "/picture/Alif Rizqullah.png"
   },
   {
     "Nama": "Althaffalah Nayottama Wardhana",

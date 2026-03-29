@@ -12,8 +12,26 @@ export default function VillageHero({ village }: VillageHeroProps) {
         {/* Title */}
         <div className="text-center mb-10">
           <h1 className="font-heading text-5xl md:text-7xl">
-            <span className="text-accent">Desa </span>
-            <span className="text-primary">{village.name}</span>
+            <span
+              style={{
+                backgroundImage: "linear-gradient(135deg, #ED941D, #F7D149)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Desa{" "}
+            </span>
+            <span
+              style={{
+                backgroundImage: "linear-gradient(135deg, #133F63, #1a5280)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              {village.name}
+            </span>
           </h1>
           <p className="text-muted mt-3 text-base md:text-lg max-w-xl mx-auto">{village.tagline}</p>
         </div>

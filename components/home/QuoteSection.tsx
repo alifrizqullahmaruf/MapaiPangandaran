@@ -18,17 +18,17 @@ export default function QuoteSection() {
           >
             <div className="relative w-64 h-80 md:w-72 md:h-96">
               <Image
-                src="/picture/Alif Rizqullah.png"
+                src="/Mohamad-Rachmadian-Narotama.webp"
                 alt="Alif Rizqullah Maruf — Kormanit Mapai Pangandaran"
                 fill
                 className="object-cover rounded-3xl shadow-2xl"
                 sizes="300px"
               />
               {/* Name badge */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-max bg-primary/90 backdrop-blur text-white rounded-2xl px-6 py-3 text-center shadow-lg border border-white/20">
-                <p className="font-semibold text-sm">Alif Rizqullah Maruf</p>
-                <p className="text-white/70 text-xs">Kormanit Mapai Pangandaran 2025</p>
-              </div>
+              {/* <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-max bg-primary/90 backdrop-blur text-white rounded-2xl px-6 py-3 text-center shadow-lg border border-white/20">
+                <p className="font-semibold text-sm">Mohamad Rachmadian Narotama</p>
+                <p className="text-white/70 text-xs">DPL Mapai Pangandaran 2025</p>
+              </div> */}
             </div>
           </motion.div>
 
