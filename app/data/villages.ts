@@ -18,6 +18,7 @@ export interface Village {
   area: string
   population: number
   photos: [string, string, string]
+  maps: string[]
   dusun: string[]
   officials: {
     kepalaDesa: VillageOfficial
@@ -37,9 +38,12 @@ export const villages: Village[] = [
     area: "1.355,61 Ha",
     population: 4124,
     photos: [
-      "https://picsum.photos/seed/kertayasa1/800/500",
-      "https://picsum.photos/seed/kertayasa2/800/500",
-      "https://picsum.photos/seed/kertayasa3/800/500",
+      "/desa/kertayasa/Kesenian.png",
+      "/desa/kertayasa/Canyon.png",
+      "/desa/kertayasa/Guano.jpg",
+    ],
+    maps: [
+      "/desa/kertayasa/Map.png",
     ],
     dusun: [
       "Dusun Karangpaci",
@@ -57,13 +61,13 @@ export const villages: Village[] = [
         image: "/desa/kertayasa/Kades.png",
       },
       kepalaDusun: [
-        { nama: "Bpk. Sujarwo", jabatan: "Kepala Dusun Karangpaci", image: "https://picsum.photos/seed/kadus1/200/200" },
-        { nama: "Bpk. Hendra", jabatan: "Kepala Dusun Bantarkawung", image: "https://picsum.photos/seed/kadus2/200/200" },
-        { nama: "Bpk. Yusuf", jabatan: "Kepala Dusun Bugel", image: "https://picsum.photos/seed/kadus3/200/200" },
-        { nama: "Bpk. Asep", jabatan: "Kepala Dusun Tenjolaya", image: "https://picsum.photos/seed/kadus4/200/200" },
-        { nama: "Bpk. Wahyu", jabatan: "Kepala Dusun Cibuluh", image: "https://picsum.photos/seed/kadus5/200/200" },
-        { nama: "Bpk. Dadan", jabatan: "Kepala Dusun Merjan", image: "https://picsum.photos/seed/kadus6/200/200" },
-        { nama: "Bpk. Ridwan", jabatan: "Kepala Dusun Margaluyu", image: "https://picsum.photos/seed/kadus7/200/200" },
+        { nama: "Bpk. Koidin", jabatan: "Kepala Dusun Karangpaci", image: "https://picsum.photos/seed/kadus1/200/200" },
+        { nama: "Bpk. Dadang", jabatan: "Kepala Dusun Bantarkawung", image: "https://picsum.photos/seed/kadus2/200/200" },
+        { nama: "Bpk. Yayat", jabatan: "Kepala Dusun Bugel", image: "https://picsum.photos/seed/kadus3/200/200" },
+        { nama: "Bpk. Abdul", jabatan: "Kepala Dusun Tenjolaya", image: "https://picsum.photos/seed/kadus4/200/200" },
+        { nama: "Bpk. Adi Suryadi", jabatan: "Kepala Dusun Cibuluh", image: "https://picsum.photos/seed/kadus5/200/200" },
+        { nama: "Bpk. Didin", jabatan: "Kepala Dusun Merjan", image: "https://picsum.photos/seed/kadus6/200/200" },
+        { nama: "Bpk. Rasid", jabatan: "Kepala Dusun Margaluyu", image: "https://picsum.photos/seed/kadus7/200/200" },
       ],
     },
     highlights: [
@@ -71,25 +75,25 @@ export const villages: Village[] = [
         title: "Milangkala Desa",
         description:
           "Milangkala Desa, yang diperingati setiap tanggal 12 Juli, merupakan perayaan hari jadi desa dan menjadi momen penting untuk mengenang sejarah berdirinya desa sekaligus memperkuat rasa kebersamaan. Kegiatan ini biasanya diisi dengan kesenian tradisional, doa bersama, serta kegiatan sosial dan hiburan yang melibatkan seluruh lapisan masyarakat.",
-        image: "https://picsum.photos/seed/milangkala/800/500",
+        image: "/desa/kertayasa/Milangkala.png",
       },
       {
         title: "Green Canyon",
         description:
           "Green Canyon atau Cukang Taneuh adalah objek wisata alam ikonik di Desa Kertayasa. Aliran sungai hijau yang membelah tebing batu kapur menciptakan pemandangan yang memukau. Wisatawan dapat menikmati perjalanan perahu menyusuri sungai dan berenang di kolam alami yang jernih.",
-        image: "https://picsum.photos/seed/greencanyon/800/500",
+        image: "/desa/kertayasa/Green.png",
       },
       {
-        title: "Budidaya Ikan Air Tawar",
+        title: "Curug Taringgul",
         description:
-          "Potensi sungai dan irigasi yang melimpah menjadikan Desa Kertayasa cocok untuk budidaya ikan air tawar seperti nila, lele, dan mas. Kelompok tani ikan desa aktif mengembangkan usaha ini sebagai sumber pendapatan alternatif yang menjanjikan.",
-        image: "https://picsum.photos/seed/budidayaikan/800/500",
+          "Curug Taringgul adalah objek wisata alam yang terletak di Desa Kertayasa. Air terjun alami dengan aliran sungai menjadikannya destinasi yang populer untuk melakukan body rafting dan wisata petualangan alam.",
+        image: "/desa/kertayasa/Curug.png",
       },
       {
         title: "Kesenian Tradisional",
         description:
           "Desa Kertayasa masih menjaga kelestarian seni tradisional seperti calung, wayang golek, dan jaipongan. Grup kesenian desa rutin tampil pada perayaan hari besar dan acara adat, menjaga warisan budaya Sunda tetap hidup di tengah modernisasi.",
-        image: "https://picsum.photos/seed/kesenian/800/500",
+        image: "/desa/kertayasa/Kesenian.png",
       },
     ],
     prokerSlugs: ["pupuk-guano-kelelawar", "revitalisasi-pojok-baca", "pelatihan-digital-umkm"],
@@ -107,25 +111,28 @@ export const villages: Village[] = [
       "https://picsum.photos/seed/batukaras2/800/500",
       "https://picsum.photos/seed/batukaras3/800/500",
     ],
+        maps: [
+      "/desa/batukaras/Map.png",
+    ],
     dusun: [
       "Dusun Batukaras",
-      "Dusun Legokjawa",
-      "Dusun Ciparay",
-      "Dusun Ciawitali",
-      "Dusun Ciharuman",
+      "Dusun Sanghiangkalang",
+      "Dusun Cidahu",
+      "Dusun Pasuketan",
+      "Dusun Nagrok",
     ],
     officials: {
       kepalaDesa: {
-        nama: "H. Ade Kusnadi",
+        nama: "Hadi Somantri",
         jabatan: "Kepala Desa Batukaras",
         image: "https://picsum.photos/seed/kadesbatukaras/300/400",
       },
       kepalaDusun: [
-        { nama: "Bpk. Tarya", jabatan: "Kepala Dusun Batukaras", image: "https://picsum.photos/seed/bkadus1/200/200" },
-        { nama: "Bpk. Surya", jabatan: "Kepala Dusun Legokjawa", image: "https://picsum.photos/seed/bkadus2/200/200" },
-        { nama: "Bpk. Nanang", jabatan: "Kepala Dusun Ciparay", image: "https://picsum.photos/seed/bkadus3/200/200" },
-        { nama: "Bpk. Ujang", jabatan: "Kepala Dusun Ciawitali", image: "https://picsum.photos/seed/bkadus4/200/200" },
-        { nama: "Bpk. Ending", jabatan: "Kepala Dusun Ciharuman", image: "https://picsum.photos/seed/bkadus5/200/200" },
+        { nama: "Bpk. Amung", jabatan: "Kepala Dusun Batukaras", image: "https://picsum.photos/seed/bkadus1/200/200" },
+        { nama: "Bpk. Toni", jabatan: "Kepala Dusun Sanghiangkalang", image: "https://picsum.photos/seed/bkadus2/200/200" },
+        { nama: "Bpk. Suparlan", jabatan: "Kepala Dusun Cidahu", image: "https://picsum.photos/seed/bkadus3/200/200" },
+        { nama: "Bpk. Ai Kustiwa", jabatan: "Kepala Dusun Pasuketan", image: "https://picsum.photos/seed/bkadus4/200/200" },
+        { nama: "Bpk. Ending", jabatan: "Kepala Dusun Nagrok", image: "https://picsum.photos/seed/bkadus5/200/200" },
       ],
     },
     highlights: [
@@ -133,25 +140,19 @@ export const villages: Village[] = [
         title: "Pantai Batukaras",
         description:
           "Pantai Batukaras terkenal dengan ombaknya yang tenang dan berpasir putih bersih, menjadikannya salah satu pantai terbaik di Pangandaran. Pengunjung dapat menikmati berenang, berselancar, atau sekadar bersantai menikmati sunset yang memukau.",
-        image: "https://picsum.photos/seed/pantai/800/500",
+        image: "/desa/batukaras/Pantai.png",
       },
       {
-        title: "Festival Nelayan",
+        title: "Syukuran Nelayan",
         description:
-          "Festival Nelayan yang digelar setiap tahun merupakan ungkapan rasa syukur masyarakat nelayan Batukaras atas hasil laut yang melimpah. Acara ini dimeriahkan dengan lomba perahu hias, pertunjukan seni, dan ritual adat melarung sesaji ke laut.",
-        image: "https://picsum.photos/seed/festivalnelayan/800/500",
+          "Syukuran Nelayan yang digelar setiap tahun merupakan ungkapan rasa syukur masyarakat nelayan Batukaras atas hasil laut yang melimpah. Acara ini dimeriahkan dengan lomba perahu hias, pertunjukan seni, dan ritual adat melarung sesaji ke laut.",
+        image: "/desa/batukaras/Syukuran.png",
       },
       {
         title: "Surfing Batukaras",
         description:
           "Ombak di Batukaras dikenal ramah bagi peselancar pemula hingga mahir. Setiap tahun, desa ini menjadi tuan rumah kompetisi surfing regional yang menarik peserta dari berbagai penjuru Indonesia. Beberapa sekolah surfing lokal siap memandu wisatawan yang ingin belajar.",
-        image: "https://picsum.photos/seed/surfing/800/500",
-      },
-      {
-        title: "Kuliner Seafood Lokal",
-        description:
-          "Batukaras surga kuliner seafood segar. Warung-warung di tepi pantai menyajikan ikan bakar, cumi goreng, dan kepiting bumbu khas Pangandaran dengan harga terjangkau. Ikan yang disajikan merupakan hasil tangkapan nelayan lokal di pagi hari yang sama.",
-        image: "https://picsum.photos/seed/seafood/800/500",
+        image: "/desa/batukaras/Surfing.png",
       },
     ],
     prokerSlugs: ["konservasi-terumbu-karang", "posyandu-balita-batukaras", "pemetaan-wisata-batukaras"],

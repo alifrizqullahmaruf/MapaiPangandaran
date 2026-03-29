@@ -17,7 +17,7 @@ export default function ArticleHighlights({ articles }: ArticleHighlightsProps) 
         <div className="flex items-start justify-between mb-10 gap-4 flex-wrap">
           <SectionTitle title="Dari Mapai Pangandaran" />
           <Link
-            href="/artikel/pupuk-guano-kelelawar"
+            href="/proker"
             className="flex-shrink-0 rounded-full border border-primary text-primary text-sm font-medium px-5 py-2 hover:bg-primary hover:text-white transition-colors"
           >
             Lihat Selengkapnya

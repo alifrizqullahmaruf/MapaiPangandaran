@@ -22,10 +22,10 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-secondary font-medium text-sm md:text-base tracking-widest uppercase mb-4">
-            KKN UGM 2025 · Kecamatan Cijulang · Pangandaran
+          <p className="text-white font-medium text-sm md:text-base tracking-widest uppercase mb-4">
+            KKN-PPM UGM · Kecamatan Cijulang · Pangandaran
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none mb-6 drop-shadow-lg">
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none mb-8 drop-shadow-lg">
             Mapai Pangandaran
           </h1>
         </motion.div>
@@ -52,12 +52,7 @@ export default function HeroSection() {
           >
             Jelajahi Proker
           </Link>
-          <Link
-            href="/desa/kertayasa"
-            className="rounded-full border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 text-sm transition-colors"
-          >
-            Lihat Profil Desa
-          </Link>
+          
         </motion.div>
       </div>
 

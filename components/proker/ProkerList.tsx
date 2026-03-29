@@ -54,7 +54,7 @@ export default function ProkerList({ articles }: ProkerListProps) {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              paddingBottom: "0.15em",
+              paddingBottom: "0.45em",
             }}
           >
             Program Kerja
