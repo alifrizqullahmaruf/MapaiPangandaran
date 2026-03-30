@@ -1,3 +1,5 @@
+export const revalidate = 0 // selalu fetch fresh, tidak di-cache
+
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import ProkerList from "@/components/proker/ProkerList"

@@ -1,3 +1,5 @@
+export const revalidate = 0
+
 import { getAllMembers } from "@/lib/db/team"
 import AdminTimDashboard from "@/components/admin/AdminTimDashboard"
 import staticMembers from "@/app/data/data-tim.json"
