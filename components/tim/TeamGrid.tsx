@@ -168,7 +168,7 @@ export default function TeamGrid({ members }: TeamGridProps) {
               className="bg-surface rounded-2xl border border-border p-4 hover:border-primary/40 hover:shadow-md transition-all"
             >
               {/* Portrait */}
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-3">
+              <div className="relative w-full aspect-3/4 rounded-xl overflow-hidden mb-3">
                 <Image
                   src={member.Image}
                   alt={member.Nama}

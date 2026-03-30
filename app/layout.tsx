@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/Logo-icon.png",
   },
-  title: "Mapai Pangandaran — KKN UGM 2025",
+  title: "Mapai Pangandaran — KKN-PPM UGM",
   description:
     "Website resmi tim KKN Mapai Pangandaran di Desa Kertayasa dan Desa Batukaras, Kecamatan Cijulang, Kabupaten Pangandaran, Jawa Barat.",
 };
