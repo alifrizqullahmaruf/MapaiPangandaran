@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { Article } from "@/app/data/articles"
+import AdminEditButton from "@/components/admin/AdminEditButton"
 
 interface ProkerListProps {
   articles: Article[]
@@ -140,10 +141,11 @@ export default function ProkerList({ articles }: ProkerListProps) {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((article) => (
+              <div key={article.slug} className="relative group">
+                <AdminEditButton slug={article.slug} />
               <Link
-                key={article.slug}
                 href={`/artikel/${article.slug}`}
-                className="group bg-surface rounded-2xl border border-border overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all"
+                className="group bg-surface rounded-2xl border border-border overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all block"
               >
                 {/* Cover image */}
                 <div className="relative h-48 overflow-hidden">
@@ -202,6 +204,7 @@ export default function ProkerList({ articles }: ProkerListProps) {
                   </div>
                 </div>
               </Link>
+              </div>
             ))}
           </div>
         )}

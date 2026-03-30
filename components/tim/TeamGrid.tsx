@@ -1,7 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import Link from "next/link"
+import { useState, useEffect } from "react"
 
 interface TeamMember {
   Nama: string
@@ -25,6 +26,14 @@ export default function TeamGrid({ members }: TeamGridProps) {
   const [activeFilter, setActiveFilter] = useState("ALL")
   const [angkatanFilter, setAngkatanFilter] = useState("ALL")
   const [search, setSearch] = useState("")
+  const [isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    fetch("/api/admin/me")
+      .then((r) => r.json())
+      .then((d) => setIsAdmin(d.admin === true))
+      .catch(() => {})
+  }, [])
 
   // Collect unique angkatan values from data, fallback to "2023"
   const angkatanOptions = [
@@ -42,6 +51,18 @@ export default function TeamGrid({ members }: TeamGridProps) {
   return (
     <div className="py-16 bg-background">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Admin button */}
+        {isAdmin && (
+          <div className="flex justify-end mb-4">
+            <Link
+              href="/admin"
+              className="px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/90 transition"
+            >
+              Admin Panel
+            </Link>
+          </div>
+        )}
+
         {/* Page title */}
         <div className="text-center mb-10">
           <h1

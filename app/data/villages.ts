@@ -107,9 +107,9 @@ export const villages: Village[] = [
     area: "823,4 Ha",
     population: 3812,
     photos: [
-      "https://picsum.photos/seed/batukaras1/800/500",
-      "https://picsum.photos/seed/batukaras2/800/500",
-      "https://picsum.photos/seed/batukaras3/800/500",
+      "/desa/batukaras/Surfing2.png",
+      "/desa/batukaras/Pantai2.png",
+      "/desa/batukaras/Pantai3.png",
     ],
         maps: [
       "/desa/batukaras/Map.png",
@@ -125,7 +125,7 @@ export const villages: Village[] = [
       kepalaDesa: {
         nama: "Hadi Somantri",
         jabatan: "Kepala Desa Batukaras",
-        image: "https://picsum.photos/seed/kadesbatukaras/300/400",
+        image: "/desa/batukaras/Kades.png",
       },
       kepalaDusun: [
         { nama: "Bpk. Amung", jabatan: "Kepala Dusun Batukaras", image: "https://picsum.photos/seed/bkadus1/200/200" },
