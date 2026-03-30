@@ -242,11 +242,30 @@ export default function MemberForm({
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>Divisi</label>
-            <input className={inputClass} value={form.Divisi} onChange={(e) => set("Divisi", e.target.value)} placeholder="Logistik, Humas, ..." />
+            <select className={inputClass} value={form.Divisi} onChange={(e) => set("Divisi", e.target.value)}>
+              <option value="">-- Pilih Divisi --</option>
+              <option value="Logistik">Logistik</option>
+              <option value="CC">CC</option>
+              <option value="PSDM">PSDM</option>
+              <option value="Sponsor">Sponsor</option>
+              <option value="Desain">Desain</option>
+              <option value="Humas">Humas</option>
+            </select>
           </div>
           <div>
             <label className={labelClass}>Jabatan</label>
-            <input className={inputClass} value={form.Jabatan} onChange={(e) => set("Jabatan", e.target.value)} placeholder="KORMANIT, Anggota, ..." />
+            <select className={inputClass} value={form.Jabatan} onChange={(e) => set("Jabatan", e.target.value)}>
+              <option value="">-- Pilih Jabatan --</option>
+              <option value="KORMANIT">KORMANIT</option>
+              <option value="KORMASIT BK 1">KORMASIT BK 1</option>
+              <option value="KORMASIT BK 2">KORMASIT BK 2</option>
+              <option value="KORMASIT KY 1">KORMASIT KY 1</option>
+              <option value="KORMASIT KY 2">KORMASIT KY 2</option>
+              <option value="KORMATER">KORMATER</option>
+              <option value="Sekretaris">Sekretaris</option>
+              <option value="Bendahara">Bendahara</option>
+              <option value="Anggota">Anggota</option>
+            </select>
           </div>
         </div>
 
