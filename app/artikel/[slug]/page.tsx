@@ -1,3 +1,5 @@
+export const revalidate = 0
+
 import { notFound } from "next/navigation"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
