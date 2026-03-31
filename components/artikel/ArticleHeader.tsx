@@ -16,7 +16,7 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
       {/* Back button */}
       <Link
-        href="/"
+        href="/proker"
         className="inline-flex items-center gap-2 rounded-full bg-primary text-white text-sm font-medium px-5 py-2 hover:bg-primary/90 transition-colors mb-8"
       >
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

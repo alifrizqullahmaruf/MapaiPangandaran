@@ -37,8 +37,8 @@ export default function VillageHighlights({ village }: VillageHighlightsProps) {
             </div>
 
             {/* Text */}
-            <div className="p-8 flex flex-col justify-center">
-              <div className="bg-background border border-border rounded-2xl p-6">
+            <div className="p-10 flex flex-col justify-center">
+              <div className=" rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-text mb-3">{slide.title}</h3>
                 <p className="text-muted text-sm leading-relaxed">{slide.description}</p>
               </div>

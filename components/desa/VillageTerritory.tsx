@@ -32,7 +32,7 @@ export default function VillageTerritory({ village }: VillageTerritoryProps) {
               {village.dusun.map((dusun) => (
                 <span
                   key={dusun}
-                  className="border border-primary text-primary rounded-full px-5 py-2.5 text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-default"
+                  className="border border-primary text-primary rounded-full px-5 py-2.5 text-sm font-medium  cursor-default"
                 >
                   {dusun}
                 </span>
