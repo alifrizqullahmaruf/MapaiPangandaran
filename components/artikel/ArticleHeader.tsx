@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "motion/react"
 import { Article } from "@/app/data/articles"
 
 interface ArticleHeaderProps {
@@ -13,8 +16,12 @@ const villageLabel: Record<string, string> = {
 
 export default function ArticleHeader({ article }: ArticleHeaderProps) {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
-      {/* Back button */}
+    <motion.div
+      className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <Link
         href="/proker"
         className="inline-flex items-center gap-2 rounded-full bg-primary text-white text-sm font-medium px-5 py-2 hover:bg-primary/90 transition-colors mb-8"
@@ -25,7 +32,6 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
         Kembali
       </Link>
 
-      {/* Category & cluster badges */}
       <div className="flex flex-wrap gap-2 mb-4">
         <span className="text-xs font-medium border border-primary text-primary rounded-full px-3 py-1">
           {article.category}
@@ -38,14 +44,12 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
         </span>
       </div>
 
-      {/* Title */}
       <h1 className="text-3xl md:text-4xl font-bold text-text leading-tight mb-6">
         {article.title}
       </h1>
 
-      {/* Author */}
       <div className="flex items-center gap-3 pb-8 border-b border-border">
-        <div className="relative w-11 h-11 flex-shrink-0">
+        <div className="relative w-11 h-11 shrink-0">
           <Image
             src={article.author.image}
             alt={article.author.nama}
@@ -68,6 +72,6 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
           })}
         </span>
       </div>
-    </div>
+    </motion.div>
   )
 }
