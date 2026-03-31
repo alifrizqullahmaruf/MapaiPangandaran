@@ -182,6 +182,7 @@ export default function TeamGrid({ members }: TeamGridProps) {
               <p className="font-semibold text-text text-sm leading-snug">{member.Nama}</p>
               <p className="text-primary text-xs mt-1 font-medium">{member.Jabatan}</p>
               <p className="text-muted text-xs mt-0.5">{member.Divisi} · {member.Kluster}</p>
+              <p className="text-muted text-xs mt-0.5">{member.Prodi}</p>
 
               {/* Instagram */}
               {member.Instagram && (

@@ -19,8 +19,9 @@ export default function VillageHighlights({ village }: VillageHighlightsProps) {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-text text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-text text-left mb-10">
           Ada Apa di Desa {village.name}?
+        <div className="h-1 w-12 bg-primary rounded-full text-left items-start mt-3"  />
         </h2>
 
         <div className="relative border-2 border-border rounded-3xl overflow-hidden bg-surface">
@@ -37,14 +38,14 @@ export default function VillageHighlights({ village }: VillageHighlightsProps) {
             </div>
 
             {/* Text */}
-            <div className="p-10 flex flex-col justify-center">
+            <div className="p-10 flex flex-col justify-center mr-4">
               <div className=" rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-text mb-3">{slide.title}</h3>
                 <p className="text-muted text-sm leading-relaxed">{slide.description}</p>
               </div>
 
               {/* Dots */}
-              <div className="flex gap-2 mt-6 justify-center md:justify-start">
+              <div className="flex gap-2 mt-6 justify-center md:justify-start ml-6">
                 {highlights.map((_, i) => (
                   <button
                     key={i}

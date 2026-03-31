@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://picsum.photos/seed/mapai-hero/1920/1080')" }}
+        style={{ backgroundImage: "url('/Cover.jpeg')" }}
       />
 
       {/* Gradient overlay */}

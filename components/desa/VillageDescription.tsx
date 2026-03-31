@@ -23,7 +23,7 @@ export default function VillageDescription({ village }: VillageDescriptionProps)
     <section className=" bg-background mx-auto">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-text text-base md:text-lg leading-relaxed">
+          <p className="text-text text-base md:text-lg leading-relaxed ">
             {renderDescription(village.description)}
           </p>
           <div className="flex flex-wrap gap-6 mt-6 justify-center">

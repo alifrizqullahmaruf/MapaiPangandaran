@@ -6,6 +6,7 @@ import { TeamMember } from "@/lib/db/team"
 import { supabase } from "@/lib/supabase"
 import Combobox from "@/components/admin/Combobox"
 import { allFakultas, getProdiByFakultas } from "@/app/data/ugm-fakultas"
+import ImageCropModal from "@/components/admin/ImageCropModal"
 
 type FormData = {
   Nama: string
@@ -57,15 +58,22 @@ export default function MemberForm({
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const [uploading, setUploading] = useState(false)
+  const [cropSrc, setCropSrc] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const handlePhotoUpload = useCallback(async (file: File) => {
+  function handleFileSelect(file: File) {
+    const reader = new FileReader()
+    reader.onload = () => setCropSrc(reader.result as string)
+    reader.readAsDataURL(file)
+  }
+
+  const handleCropConfirm = useCallback(async (blob: Blob) => {
+    setCropSrc(null)
     setUploading(true)
-    const ext = file.name.split(".").pop()
-    const fileName = `members/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
+    const fileName = `members/${Date.now()}-${Math.random().toString(36).slice(2)}.jpg`
     const { error } = await supabase.storage
       .from("covers")
-      .upload(fileName, file, { contentType: file.type, upsert: false })
+      .upload(fileName, blob, { contentType: "image/jpeg", upsert: false })
     if (!error) {
       const { data } = supabase.storage.from("covers").getPublicUrl(fileName)
       setForm((prev) => ({ ...prev, Image: data.publicUrl }))
@@ -133,6 +141,15 @@ export default function MemberForm({
         {mode === "create" ? "Tambah Anggota Baru" : `Edit: ${member?.Nama}`}
       </h1>
 
+      {cropSrc && (
+        <ImageCropModal
+          imageSrc={cropSrc}
+          aspect={3 / 4}
+          onCancel={() => { setCropSrc(null); if (fileInputRef.current) fileInputRef.current.value = "" }}
+          onConfirm={handleCropConfirm}
+        />
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Foto */}
         <div>
@@ -144,7 +161,7 @@ export default function MemberForm({
             className="hidden"
             onChange={(e) => {
               const file = e.target.files?.[0]
-              if (file) handlePhotoUpload(file)
+              if (file) handleFileSelect(file)
             }}
           />
           <div className="flex items-center gap-4">
@@ -257,10 +274,10 @@ export default function MemberForm({
             <select className={inputClass} value={form.Jabatan} onChange={(e) => set("Jabatan", e.target.value)}>
               <option value="">-- Pilih Jabatan --</option>
               <option value="KORMANIT">KORMANIT</option>
-              <option value="KORMASIT BK 1">KORMASIT BK 1</option>
-              <option value="KORMASIT BK 2">KORMASIT BK 2</option>
-              <option value="KORMASIT KY 1">KORMASIT KY 1</option>
-              <option value="KORMASIT KY 2">KORMASIT KY 2</option>
+              <option value="KORMASIT BK 1">KORMASIT Batukaras 1</option>
+              <option value="KORMASIT BK 2">KORMASIT Batukaras 2</option>
+              <option value="KORMASIT KY 1">KORMASIT Kertayasa 1</option>
+              <option value="KORMASIT KY 2">KORMASIT Kertayasa 2</option>
               <option value="KORMATER">KORMATER</option>
               <option value="Sekretaris">Sekretaris</option>
               <option value="Bendahara">Bendahara</option>

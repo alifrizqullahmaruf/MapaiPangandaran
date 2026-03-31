@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import { Article } from "@/app/data/articles"
 import { TeamMember } from "@/lib/db/team"
 import { supabase } from "@/lib/supabase"
+import ImageCropModal from "@/components/admin/ImageCropModal"
 
 type FormData = {
   slug: string
@@ -77,17 +78,22 @@ export default function ArticleForm({
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const [uploading, setUploading] = useState(false)
+  const [cropSrc, setCropSrc] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const handleCoverUpload = useCallback(async (file: File) => {
-    setUploading(true)
-    const ext = file.name.split(".").pop()
-    const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
+  function handleFileSelect(file: File) {
+    const reader = new FileReader()
+    reader.onload = () => setCropSrc(reader.result as string)
+    reader.readAsDataURL(file)
+  }
 
+  const handleCropConfirm = useCallback(async (blob: Blob) => {
+    setCropSrc(null)
+    setUploading(true)
+    const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.jpg`
     const { error } = await supabase.storage
       .from("covers")
-      .upload(fileName, file, { contentType: file.type, upsert: false })
-
+      .upload(fileName, blob, { contentType: "image/jpeg", upsert: false })
     if (!error) {
       const { data } = supabase.storage.from("covers").getPublicUrl(fileName)
       setForm((prev) => ({ ...prev, cover: data.publicUrl }))
@@ -219,6 +225,15 @@ export default function ArticleForm({
         {mode === "create" ? "Tambah Artikel Baru" : "Edit Artikel"}
       </h1>
 
+      {cropSrc && (
+        <ImageCropModal
+          imageSrc={cropSrc}
+          aspect={16 / 9}
+          onCancel={() => { setCropSrc(null); if (fileInputRef.current) fileInputRef.current.value = "" }}
+          onConfirm={handleCropConfirm}
+        />
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
           <label className={labelClass}>Judul</label>
@@ -275,7 +290,7 @@ export default function ArticleForm({
             className="hidden"
             onChange={(e) => {
               const file = e.target.files?.[0]
-              if (file) handleCoverUpload(file)
+              if (file) handleFileSelect(file)
             }}
           />
 
@@ -286,7 +301,7 @@ export default function ArticleForm({
             onDrop={(e) => {
               e.preventDefault()
               const file = e.dataTransfer.files?.[0]
-              if (file) handleCoverUpload(file)
+              if (file) handleFileSelect(file)
             }}
             className="relative cursor-pointer rounded-xl border-2 border-dashed border-border hover:border-primary transition overflow-hidden"
           >
@@ -308,7 +323,7 @@ export default function ArticleForm({
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
                     </svg>
                     <p className="text-sm">Klik atau drag foto cover di sini</p>
-                    <p className="text-xs">Maks. 5 MB</p>
+                    <p className="text-xs">Format: JPG, PNG. Maks 5 MB.</p>
                   </>
                 )}
               </div>

@@ -13,14 +13,14 @@ export default function VillageOfficials({ village }: VillageOfficialsProps) {
     <section className="py-20 bg-gradient-to-br from-secondary to-primary">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Kepengurusan Desa</h2>
-          <div className="h-1 w-12 bg-white/50 rounded-full mx-auto mt-3" />
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-left items-start">Kepengurusan Desa</h2>
+          <div className="h-1 w-12 bg-white/50 rounded-full  mt-3 text-left items-start"  />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
           {/* Kepala Desa — left */}
-          <div className="flex flex-col items-center lg:items-start">
-            <div className="relative w-56 h-72">
+          <div className="flex flex-col items-center">
+            <div className="relative w-46 h-62">
               <Image
                 src={kepalaDesa.image}
                 alt={kepalaDesa.nama}

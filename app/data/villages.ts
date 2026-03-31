@@ -61,12 +61,12 @@ export const villages: Village[] = [
         image: "/desa/kertayasa/Kades.png",
       },
       kepalaDusun: [
-        { nama: "Bpk. Koidin", jabatan: "Kepala Dusun Karangpaci", image: "https://picsum.photos/seed/kadus1/200/200" },
-        { nama: "Bpk. Dadang", jabatan: "Kepala Dusun Bantarkawung", image: "https://picsum.photos/seed/kadus2/200/200" },
+        { nama: "Bpk. Koidin", jabatan: "Kepala Dusun Karangpaci", image: "/desa/kertayasa/Olog-Karangpaci.png" },
+        { nama: "Bpk. Dadang", jabatan: "Kepala Dusun Bantarkawung", image: "/desa/kertayasa/Olog-Bantarkawung.png" },
         { nama: "Bpk. Yayat", jabatan: "Kepala Dusun Bugel", image: "https://picsum.photos/seed/kadus3/200/200" },
-        { nama: "Bpk. Abdul", jabatan: "Kepala Dusun Tenjolaya", image: "https://picsum.photos/seed/kadus4/200/200" },
-        { nama: "Bpk. Adi Suryadi", jabatan: "Kepala Dusun Cibuluh", image: "https://picsum.photos/seed/kadus5/200/200" },
-        { nama: "Bpk. Didin", jabatan: "Kepala Dusun Merjan", image: "https://picsum.photos/seed/kadus6/200/200" },
+        { nama: "Bpk. Abdul", jabatan: "Kepala Dusun Tenjolaya", image: "/desa/kertayasa/Olog-Tenjolaya.png" },
+        { nama: "Bpk. Adi Suryadi", jabatan: "Kepala Dusun Cibuluh", image: "/desa/kertayasa/Olog-Cibuluh.png" },
+        { nama: "Bpk. Didin", jabatan: "Kepala Dusun Merjan", image: "/desa/kertayasa/Olog-Merjan.png" },
         { nama: "Bpk. Rasid", jabatan: "Kepala Dusun Margaluyu", image: "https://picsum.photos/seed/kadus7/200/200" },
       ],
     },
@@ -92,8 +92,8 @@ export const villages: Village[] = [
       {
         title: "Kesenian Tradisional",
         description:
-          "Desa Kertayasa masih menjaga kelestarian seni tradisional seperti calung, wayang golek, dan jaipongan. Grup kesenian desa rutin tampil pada perayaan hari besar dan acara adat, menjaga warisan budaya Sunda tetap hidup di tengah modernisasi.",
-        image: "/desa/kertayasa/Kesenian.png",
+          "Desa Kertayasa masih menjaga kelestarian seni tradisional seperti calung, badud, dan benjang bathok. Grup kesenian desa rutin tampil pada perayaan hari besar dan acara adat, menjaga warisan budaya Sunda tetap hidup di tengah modernisasi.",
+        image: "/desa/kertayasa/Badud.jpeg",
       },
     ],
     prokerSlugs: ["pupuk-guano-kelelawar", "revitalisasi-pojok-baca", "pelatihan-digital-umkm"],
@@ -119,7 +119,8 @@ export const villages: Village[] = [
       "Dusun Sanghiangkalang",
       "Dusun Cidahu",
       "Dusun Pasuketan",
-      "Dusun Nagrok",
+      "Dusun Nagrog",
+      "Dusun Mandala",
     ],
     officials: {
       kepalaDesa: {
@@ -132,7 +133,8 @@ export const villages: Village[] = [
         { nama: "Bpk. Toni", jabatan: "Kepala Dusun Sanghiangkalang", image: "https://picsum.photos/seed/bkadus2/200/200" },
         { nama: "Bpk. Suparlan", jabatan: "Kepala Dusun Cidahu", image: "https://picsum.photos/seed/bkadus3/200/200" },
         { nama: "Bpk. Ai Kustiwa", jabatan: "Kepala Dusun Pasuketan", image: "https://picsum.photos/seed/bkadus4/200/200" },
-        { nama: "Bpk. Ending", jabatan: "Kepala Dusun Nagrok", image: "https://picsum.photos/seed/bkadus5/200/200" },
+        { nama: "Bpk. Ending", jabatan: "Kepala Dusun Nagrog", image: "https://picsum.photos/seed/bkadus5/200/200" },
+        { nama: "Bpk. Ending", jabatan: "Kepala Dusun Mandala", image: "https://picsum.photos/seed/bkadus6/200/200" },
       ],
     },
     highlights: [
