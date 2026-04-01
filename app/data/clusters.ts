@@ -22,7 +22,7 @@ export const clusters: Cluster[] = [
   },
   {
     id: "AGRO",
-    name: "Agronomi",
+    name: "Agro",
     description:
       "Klaster Agro mendampingi petani dan nelayan dalam mengoptimalkan hasil pertanian, perikanan, dan pengelolaan lingkungan hidup secara berkelanjutan.",
     image: "/clusters/Agro.png",
