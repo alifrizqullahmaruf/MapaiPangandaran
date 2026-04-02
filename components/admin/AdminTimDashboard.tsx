@@ -81,15 +81,15 @@ export default function AdminTimDashboard({ members }: { members: TeamMember[] }
           </select>
         </div>
 
-        <div className="bg-surface rounded-2xl border border-border overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="bg-surface rounded-2xl border border-border overflow-x-auto">
+          <table className="w-full text-sm min-w-120">
             <thead className="border-b border-border bg-background">
               <tr>
                 <th className="text-left px-4 py-3 font-medium text-muted">Anggota</th>
-                <th className="text-left px-4 py-3 font-medium text-muted">Kluster</th>
-                <th className="text-left px-4 py-3 font-medium text-muted">Jabatan</th>
-                <th className="text-left px-4 py-3 font-medium text-muted">Angkatan</th>
-                <th className="px-4 py-3"></th>
+                <th className="text-left px-4 py-3 font-medium text-muted hidden sm:table-cell">Kluster</th>
+                <th className="text-left px-4 py-3 font-medium text-muted hidden md:table-cell">Jabatan</th>
+                <th className="text-left px-4 py-3 font-medium text-muted hidden lg:table-cell">Angkatan</th>
+                <th className="px-4 py-3 text-right font-medium text-muted">Aksi</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -113,29 +113,33 @@ export default function AdminTimDashboard({ members }: { members: TeamMember[] }
                       <div>
                         <div className="font-medium text-text">{member.Nama}</div>
                         <div className="text-muted text-xs">{member.Prodi}</div>
+                        {/* Kluster badge visible on mobile only */}
+                        <span className={`sm:hidden inline-block mt-0.5 text-xs px-2 py-0.5 rounded-full font-medium ${KLUSTER_COLOR[member.Kluster] ?? "bg-gray-100 text-gray-600"}`}>
+                          {member.Kluster}
+                        </span>
                       </div>
                     </div>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="px-4 py-3 hidden sm:table-cell">
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${KLUSTER_COLOR[member.Kluster] ?? "bg-gray-100 text-gray-600"}`}>
                       {member.Kluster}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-text">{member.Jabatan}</td>
-                  <td className="px-4 py-3 text-muted">{member.Angkatan ?? "2022"}</td>
+                  <td className="px-4 py-3 text-text hidden md:table-cell">{member.Jabatan}</td>
+                  <td className="px-4 py-3 text-muted hidden lg:table-cell">{member.Angkatan ?? "2022"}</td>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2 justify-end">
                       {member.id ? (
                         <>
                           <Link
                             href={`/admin/tim/${member.id}/edit`}
-                            className="px-3 py-1 text-xs rounded-lg border border-border text-text hover:border-primary hover:text-primary transition"
+                            className="px-3 py-1 text-xs rounded-lg border border-border text-text hover:border-primary hover:text-primary transition whitespace-nowrap"
                           >
                             Edit
                           </Link>
                           <button
                             onClick={() => setDeleteTarget(member)}
-                            className="px-3 py-1 text-xs rounded-lg border border-red-200 text-red-500 hover:bg-red-50 transition"
+                            className="px-3 py-1 text-xs rounded-lg border border-red-200 text-red-500 hover:bg-red-50 transition whitespace-nowrap"
                           >
                             Hapus
                           </button>

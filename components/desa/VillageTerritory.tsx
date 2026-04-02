@@ -26,7 +26,9 @@ export default function VillageTerritory({ village }: VillageTerritoryProps) {
           {/* Right: description + chips */}
           <div className="flex flex-col gap-6">
             <p className="text-text text-base md:text-lg leading-relaxed">
-              Desa {village.name} terbagi dalam {village.dusun.length} dusun dan berbatasan dengan desa-desa tetangga di Kecamatan Cijulang. Wilayah ini memiliki karakteristik alam yang mendukung sektor pertanian, perkebunan, dan potensi wisata lokal.
+              {village.name === "Kertayasa"
+                ? "Sebagai jantung aktivitas wisata dan agraris, Desa Kertayasa mengintegrasikan 7 wilayah dusun. Lokasinya berbatasan langsung dengan Desa Margacinta (utara), Desa Batukaras (selatan), Desa Cijulang (timur), dan Desa Cibanten (barat)."
+                : "Dikenal sebagai surga selancar, Desa Batukaras memiliki struktur wilayah unik yang mencakup 6 dusun. Letak geografisnya sangat strategis karena diapit oleh Desa Cijulang dan Masawah, serta berbatasan langsung dengan laut lepas di sisi timur dan Desa Kertayasa di sisi barat."}
             </p>
             <div className="flex flex-wrap gap-3">
               {village.dusun.map((dusun) => (

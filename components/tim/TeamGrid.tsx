@@ -193,36 +193,29 @@ export default function TeamGrid({ members }: TeamGridProps) {
           {filtered.map((member) => (
             <motion.div
               key={member.Nama}
-              className="bg-surface rounded-2xl border border-border p-4 hover:border-primary/40 hover:shadow-md transition-all"
               variants={cardVariants}
               layout
               exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
             >
-              <div className="relative w-full aspect-3/4 rounded-xl overflow-hidden mb-3">
-                <Image
-                  src={member.Image}
-                  alt={member.Nama}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                />
-              </div>
+              <Link
+                href={`/tim/${encodeURIComponent(member.Nama)}`}
+                className="group block bg-surface rounded-2xl border border-border p-4 hover:border-primary/40 hover:shadow-md transition-all"
+              >
+                <div className="relative w-full aspect-3/4 rounded-xl overflow-hidden mb-3">
+                  <Image
+                    src={member.Image}
+                    alt={member.Nama}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                  />
+                </div>
 
-              <p className="font-semibold text-text text-sm leading-snug">{member.Nama}</p>
-              <p className="text-primary text-xs mt-1 font-medium">{member.Jabatan}</p>
-              <p className="text-muted text-xs mt-0.5">{member.Divisi} · {member.Kluster}</p>
-              <p className="text-muted text-xs mt-0.5">{member.Prodi}</p>
-
-              {member.Instagram && (
-                <a
-                  href={`https://instagram.com/${member.Instagram.replace("@", "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary text-xs mt-2 inline-block hover:underline"
-                >
-                  {member.Instagram}
-                </a>
-              )}
+                <p className="font-semibold text-text text-sm leading-snug group-hover:text-primary transition-colors">{member.Nama}</p>
+                <p className="text-primary text-xs mt-1 font-medium">{member.Jabatan}</p>
+                <p className="text-muted text-xs mt-0.5">{member.Divisi} · {member.Kluster}</p>
+                <p className="text-muted text-xs mt-0.5">{member.Prodi}</p>
+              </Link>
             </motion.div>
           ))}
           </AnimatePresence>

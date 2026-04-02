@@ -57,6 +57,17 @@ export async function getArticlesByVillage(village: string): Promise<Article[]> 
   return data.map(mapRow)
 }
 
+export async function getArticlesByAuthor(nama: string): Promise<Article[]> {
+  const { data, error } = await supabase
+    .from("articles")
+    .select("*")
+    .ilike("author_nama", nama)
+    .order("date", { ascending: false })
+
+  if (error) return []
+  return data.map(mapRow)
+}
+
 export async function createArticle(article: Omit<Article, "related"> & { related?: string[] }) {
   const { data, error } = await supabase.from("articles").insert({
     slug: article.slug,

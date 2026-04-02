@@ -73,15 +73,15 @@ export default function AdminDashboard({ articles }: { articles: Article[] }) {
           className="w-full mb-5 px-4 py-2.5 rounded-lg border border-border bg-surface text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
         />
 
-        <div className="bg-surface rounded-2xl border border-border overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="bg-surface rounded-2xl border border-border overflow-x-auto">
+          <table className="w-full text-sm min-w-120">
             <thead className="border-b border-border bg-background">
               <tr>
                 <th className="text-left px-4 py-3 font-medium text-muted">Judul</th>
-                <th className="text-left px-4 py-3 font-medium text-muted">Desa</th>
-                <th className="text-left px-4 py-3 font-medium text-muted">Kluster</th>
-                <th className="text-left px-4 py-3 font-medium text-muted">Tanggal</th>
-                <th className="px-4 py-3"></th>
+                <th className="text-left px-4 py-3 font-medium text-muted hidden sm:table-cell">Desa</th>
+                <th className="text-left px-4 py-3 font-medium text-muted hidden sm:table-cell">Kluster</th>
+                <th className="text-left px-4 py-3 font-medium text-muted hidden md:table-cell">Tanggal</th>
+                <th className="px-4 py-3 text-right font-medium text-muted">Aksi</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -96,28 +96,34 @@ export default function AdminDashboard({ articles }: { articles: Article[] }) {
                 <tr key={article.slug} className="hover:bg-background/50 transition">
                   <td className="px-4 py-3">
                     <div className="font-medium text-text leading-snug">{article.title}</div>
-                    <div className="text-muted text-xs mt-0.5">{article.slug}</div>
+                    {/* Badges visible on mobile only */}
+                    <div className="sm:hidden flex items-center gap-1.5 mt-1 flex-wrap">
+                      <span className="text-xs text-muted">{VILLAGE_LABEL[article.village] ?? article.village}</span>
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${KLUSTER_COLOR[article.kluster] ?? "bg-gray-100 text-gray-600"}`}>
+                        {article.kluster}
+                      </span>
+                    </div>
                   </td>
-                  <td className="px-4 py-3 text-text">
+                  <td className="px-4 py-3 text-text hidden sm:table-cell">
                     {VILLAGE_LABEL[article.village] ?? article.village}
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="px-4 py-3 hidden sm:table-cell">
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${KLUSTER_COLOR[article.kluster] ?? "bg-gray-100 text-gray-600"}`}>
                       {article.kluster}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-muted">{article.date}</td>
+                  <td className="px-4 py-3 text-muted hidden md:table-cell">{article.date}</td>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2 justify-end">
                       <Link
                         href={`/admin/artikel/${article.slug}/edit`}
-                        className="px-3 py-1 text-xs rounded-lg border border-border text-text hover:border-primary hover:text-primary transition"
+                        className="px-3 py-1 text-xs rounded-lg border border-border text-text hover:border-primary hover:text-primary transition whitespace-nowrap"
                       >
                         Edit
                       </Link>
                       <button
                         onClick={() => setDeleteTarget(article)}
-                        className="px-3 py-1 text-xs rounded-lg border border-red-200 text-red-500 hover:bg-red-50 transition"
+                        className="px-3 py-1 text-xs rounded-lg border border-red-200 text-red-500 hover:bg-red-50 transition whitespace-nowrap"
                       >
                         Hapus
                       </button>

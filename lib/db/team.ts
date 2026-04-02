@@ -41,6 +41,17 @@ export async function getAllMembers(): Promise<TeamMember[]> {
   return data.map(mapRow)
 }
 
+export async function getMemberByNama(nama: string): Promise<TeamMember | null> {
+  const { data, error } = await supabase
+    .from("team_members")
+    .select("*")
+    .ilike("nama", nama)
+    .single()
+
+  if (error || !data) return null
+  return mapRow(data)
+}
+
 export async function getMemberById(id: string): Promise<TeamMember | null> {
   const { data, error } = await supabase
     .from("team_members")
